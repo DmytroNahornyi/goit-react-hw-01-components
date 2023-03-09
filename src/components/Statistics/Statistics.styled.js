@@ -11,7 +11,7 @@ export const StatisticsSection = styled.section`
   box-shadow: 10px 10px 20px #969696;
 `;
 
-export const StatisticsTitel = styled.h2`
+export const StatisticsTitle = styled.h2`
   padding: 0;
   text-align: center;
   color: grey;

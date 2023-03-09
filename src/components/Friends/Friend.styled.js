@@ -25,7 +25,6 @@ export const IsOnline = styled.span`
   width: 15px;
   height: 15px;
   margin-right: 10px;
-
   border-radius: 50%;
   background-color: ${({ isOnline }) => (isOnline ? 'green' : 'red')};
 `;

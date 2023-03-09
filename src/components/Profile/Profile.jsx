@@ -10,6 +10,8 @@ import {
 } from './Profile.styled';
 
 export const Profile = ({ username, tag, avatar, location, stats }) => {
+  const { followers, views, likes } = stats;
+
   return (
     <ProfileWrap>
       <div>
@@ -22,15 +24,15 @@ export const Profile = ({ username, tag, avatar, location, stats }) => {
       <StatsList>
         <StatsItem>
           <span>Followers</span>
-          <StatsInfo>{stats.followers}</StatsInfo>
+          <StatsInfo>{followers}</StatsInfo>
         </StatsItem>
         <StatsItem>
           <span>Views</span>
-          <StatsInfo>{stats.views}</StatsInfo>
+          <StatsInfo>{views}</StatsInfo>
         </StatsItem>
         <StatsItem>
           <span>Likes</span>
-          <StatsInfo>{stats.likes}</StatsInfo>
+          <StatsInfo>{likes}</StatsInfo>
         </StatsItem>
       </StatsList>
     </ProfileWrap>
@@ -38,9 +40,13 @@ export const Profile = ({ username, tag, avatar, location, stats }) => {
 };
 
 Profile.propTypes = {
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  stats: PropTypes.objectOf(PropTypes.number),
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }).isRequired,
 };
